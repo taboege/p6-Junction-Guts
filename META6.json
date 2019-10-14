@@ -12,5 +12,5 @@
   "provides"         : {
     "Junction::Guts" : "lib/Junction/Guts.pm6"
   },
-  "source-url"       : "git://github.com/taboege/p6-Junction-Guts.git"
+  "source-url"       : "git://github.com/taboege/raku-Junction-Guts.git"
 }
