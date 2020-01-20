@@ -33,7 +33,7 @@ junctions useless for all other candidates of that sub. See the
 L<Junction documentation|https://docs.perl6.org/type/Junction> for details.
 
 Also see the L<ADMONITION|#ADMONITION> section below the detailed module
-description for why this rather ugly interface is not all too bad.
+description for why this rather ugly interface may be huffmanized just right.
 
 =end pod
 

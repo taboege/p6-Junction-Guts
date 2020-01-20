@@ -24,7 +24,7 @@ This module provides two subs `list` and `type` which return a list of the eigen
 
 Both subs are `our`-scoped inside `Junction::Guts`. We neither `augment` the Junction class nor export any subs. This is to avoid messing with the Junction autothreading. As soon as a multi sub has a candidate that successfully matches `Junction`, every junction is sucked into this candidate and it can't forward the sub call to its eigenstates, making junctions useless for all other candidates of that sub. See the [Junction documentation](https://docs.perl6.org/type/Junction) for details.
 
-Also see the [ADMONITION](#ADMONITION) section below the detailed module description for why this rather ugly interface is not all too bad.
+Also see the [ADMONITION](#ADMONITION) section below the detailed module description for why this rather ugly interface may be huffmanized just right.
 
 our sub list
 ------------
