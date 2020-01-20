@@ -35,7 +35,7 @@ description for why this rather ugly interface is not all too bad.
 
 unit module Junction::Guts:ver<0.0.1>:auth<github:taboege>:api<0>;
 
-use nqp; # how all the good modules begin
+use nqp; # how all the good modules start
 
 =begin pod
 
@@ -49,7 +49,10 @@ Return the eigenstates of the Junction as a list.
 =end pod
 
 our sub list (Junction:D \junc --> List:D) {
-    nqp::getattr(junc,Junction,'$!storage').List
+    my $it := nqp::iterator(nqp::getattr(junc,Junction,'$!storage'));
+    List.new: |gather {
+        take nqp::shift($it) while $it;
+    }
 }
 
 =begin pod
@@ -117,12 +120,12 @@ by this module are hidden in the first place:
 =item From a Perl 5 to 6 perspective: L<https://perlgeek.de/blog-en/perl-5-to-6/08-junctions.html>.
 =item The current Perl 6 documentation: L<https://docs.perl6.org/type/Junction>.
 
-Z«
 An alternative module that implements a Junction-lookalike class
 that is explicitly intended to allow access to its eigenstates,
 but which lacks the autothreading feature, if you can afford to
-change your code to use it:  =item ...
-»
+change your code to use it:
+
+=item (NYI)
 
 =head1 AUTHOR
 

@@ -2,7 +2,7 @@ use Test;
 use Junction::Guts;
 
 # Test that we do not impair junction functionality by augmenting
-# or exporting routines which interefere autothreading.
+# or exporting routines which interfere with autothreading.
 
 class Y {
     has $.name;

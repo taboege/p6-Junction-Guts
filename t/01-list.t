@@ -9,7 +9,7 @@ my @vectors =
     [],
 ;
 
-plan +@junctions;
+plan +@junctions + 1;
 
 for @junctions -> &junc {
     subtest "list on {&junc.name}() junctions" => {
@@ -25,3 +25,13 @@ for @junctions -> &junc {
         }
     }
 }
+
+multi prefix:<±> (Numeric:D \a) is tighter(&infix:<+>) {
+    any(a, -a)
+}
+
+my $j := ±10 + ±90;
+# $j is any(any(-80, 100), any(80, -100)), so we need two levels of guts
+# and Slip to remove itemization.
+my @got = $j.&Junction::Guts::list».&{ .&Junction::Guts::list.Slip };
+is-deeply @got.flat.sort, (-100, -80, 80, 100), '±10 + ±90';
