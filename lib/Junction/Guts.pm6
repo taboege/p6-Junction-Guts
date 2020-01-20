@@ -2,12 +2,12 @@
 
 =head1 NAME
 
-Junction::Guts - Access the storage and type of a Junction
+Junction::Guts - Access the storage and type of a Junction under Rakudo
 
 =head1 SYNOPSIS
 
 Junction::Guts grants access to the carefully tucked away I<storage>
-and I<type> attributes of a Junction.
+and I<type> attributes of a Junction as implemented currently in Rakudo.
 
   use Junction::Guts;
 
@@ -15,6 +15,10 @@ and I<type> attributes of a Junction.
   say ([^] 1..10).&Junction::Guts::type; #= one
 
 =head1 DESCRIPTION
+
+First of all, know that the guts of a Junction are not meant to be exposed
+by the Raku language. This module relies on Rakudo-specific internals and
+may stop working (and stop being repairable) any moment.
 
 This module provides two subs C<list> and C<type> which return a list of
 the eigenstates and the type as a string, respectively, of the argument

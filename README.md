@@ -1,12 +1,12 @@
 NAME
 ====
 
-Junction::Guts - Access the storage and type of a Junction
+Junction::Guts - Access the storage and type of a Junction under Rakudo
 
 SYNOPSIS
 ========
 
-Junction::Guts grants access to the carefully tucked away *storage* and *type* attributes of a Junction.
+Junction::Guts grants access to the carefully tucked away *storage* and *type* attributes of a Junction as implemented currently in Rakudo.
 
 ``` perl6
 use Junction::Guts;
@@ -17,6 +17,8 @@ say ([^] 1..10).&Junction::Guts::type; #= one
 
 DESCRIPTION
 ===========
+
+First of all, know that the guts of a Junction are not meant to be exposed by the Raku language. This module relies on Rakudo-specific internals and may stop working (and stop being repairable) any moment.
 
 This module provides two subs `list` and `type` which return a list of the eigenstates and the type as a string, respectively, of the argument junction.
 
